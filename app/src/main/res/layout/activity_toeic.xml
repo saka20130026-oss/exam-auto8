@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#080b10"
+    android:padding="16dp">
+
+    <!-- 헤더 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🎧 TOEIC AUTO"
+            android:textColor="#00d4ff"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"/>
+
+        <TextView
+            android:id="@+id/tvPhase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대기중"
+            android:textColor="#4a6a8a"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:padding="6dp"
+            android:background="#111720"/>
+    </LinearLayout>
+
+    <!-- 상태 정보 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#111720"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="촬영" android:textColor="#4a6a8a" android:textSize="10sp" android:fontFamily="monospace"/>
+            <TextView android:id="@+id/tvCapCount" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0" android:textColor="#39ff14" android:textSize="22sp" android:fontFamily="monospace" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#111720"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="LC답" android:textColor="#4a6a8a" android:textSize="10sp" android:fontFamily="monospace"/>
+            <TextView android:id="@+id/tvLcCount" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0/100" android:textColor="#00d4ff" android:textSize="22sp" android:fontFamily="monospace" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#111720"
+            android:padding="10dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="RC답" android:textColor="#4a6a8a" android:textSize="10sp" android:fontFamily="monospace"/>
+            <TextView android:id="@+id/tvRcCount" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0/100" android:textColor="#ff6b35" android:textSize="22sp" android:fontFamily="monospace" android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 마이크 상태 -->
+    <LinearLayout
+        android:id="@+id/micBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1a0a0d"
+        android:padding="10dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone">
+        <View android:id="@+id/micDot"
+            android:layout_width="10dp" android:layout_height="10dp"
+            android:background="#ff3366" android:layout_marginEnd="8dp"
+            android:layout_gravity="center_vertical"/>
+        <TextView android:id="@+id/tvMicStatus"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🎤 마이크 녹음 중..." android:textColor="#ff3366"
+            android:textSize="12sp" android:fontFamily="monospace"/>
+        <TextView android:id="@+id/tvChunkCount"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="0 청크" android:textColor="#ff3366"
+            android:textSize="12sp" android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- 현재 정답 크게 표시 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#111720"
+        android:padding="12dp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
+        <TextView android:id="@+id/tvCurrentMode"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="대기 중" android:textColor="#4a6a8a"
+            android:textSize="11sp" android:fontFamily="monospace"/>
+        <TextView android:id="@+id/tvBigAnswer"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="-" android:textColor="#ffffff"
+            android:textSize="48sp" android:fontFamily="monospace" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvAnswerDetail"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="" android:textColor="#4a6a8a"
+            android:textSize="11sp" android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- 로그 -->
+    <ScrollView
+        android:id="@+id/scrollLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#4a6a8a"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:background="#060810"
+            android:padding="8dp"/>
+    </ScrollView>
+
+    <!-- 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:text="▶ 시작"
+            android:textColor="#ffffff"
+            android:backgroundTint="#0055aa"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:text="■ 정지"
+            android:textColor="#ffffff"
+            android:backgroundTint="#770022"
+            android:enabled="false"/>
+    </LinearLayout>
+
+</LinearLayout>

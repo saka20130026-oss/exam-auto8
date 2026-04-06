@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#080b10"
+    android:padding="16dp">
+
+    <!-- 헤더 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="감정평가사"
+            android:textColor="#ffd700"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"/>
+        <TextView
+            android:id="@+id/tvPhase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대기중"
+            android:textColor="#4a6a8a"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:padding="6dp"
+            android:background="#111720"/>
+    </LinearLayout>
+
+    <!-- 교시 정보 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#111720"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="교시" android:textColor="#4a6a8a" android:textSize="10sp" android:fontFamily="monospace"/>
+            <TextView android:id="@+id/tvSession"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="대기" android:textColor="#ffd700"
+                android:textSize="22sp" android:fontFamily="monospace" android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#111720"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="촬영" android:textColor="#4a6a8a" android:textSize="10sp" android:fontFamily="monospace"/>
+            <TextView android:id="@+id/tvCapCount"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0" android:textColor="#39ff14"
+                android:textSize="22sp" android:fontFamily="monospace" android:textStyle="bold"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="#111720"
+            android:padding="10dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="정답" android:textColor="#4a6a8a" android:textSize="10sp" android:fontFamily="monospace"/>
+            <TextView android:id="@+id/tvAnsCount"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0" android:textColor="#00d4ff"
+                android:textSize="22sp" android:fontFamily="monospace" android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 현재 정답 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#111720"
+        android:padding="12dp"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
+        <TextView android:id="@+id/tvCurrentQ"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="대기 중" android:textColor="#4a6a8a"
+            android:textSize="11sp" android:fontFamily="monospace"/>
+        <TextView android:id="@+id/tvBigAnswer"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="-" android:textColor="#ffffff"
+            android:textSize="48sp" android:fontFamily="monospace" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- 로그 -->
+    <ScrollView
+        android:id="@+id/scrollLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="8dp">
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#4a6a8a"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:background="#060810"
+            android:padding="8dp"/>
+    </ScrollView>
+
+    <!-- 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:text="▶ 시작"
+            android:textColor="#ffffff"
+            android:backgroundTint="#554400"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:text="■ 정지"
+            android:textColor="#ffffff"
+            android:backgroundTint="#770022"
+            android:enabled="false"/>
+    </LinearLayout>
+
+</LinearLayout>

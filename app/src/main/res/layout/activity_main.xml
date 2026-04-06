@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#080b10"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="시험 자동화"
+        android:textColor="#00d4ff"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USB 카메라 + Claude AI"
+        android:textColor="#4a6a8a"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- USB 카메라 상태 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="32dp">
+        <View
+            android:id="@+id/camStatusDot"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="#ff3366"
+            android:layout_marginEnd="8dp"/>
+        <TextView
+            android:id="@+id/tvCamStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USB 카메라 미연결"
+            android:textColor="#4a6a8a"
+            android:textSize="13sp"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- TOEIC 버튼 -->
+    <Button
+        android:id="@+id/btnToeic"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="🎧  TOEIC 자동화"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:backgroundTint="#0055aa"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 감평 1차 버튼 -->
+    <Button
+        android:id="@+id/btnExam1"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="📋  감정평가사 1차"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:backgroundTint="#005522"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 감평 2차 버튼 -->
+    <Button
+        android:id="@+id/btnExam2"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="📝  감정평가사 2차"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:backgroundTint="#550055"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- 설정 버튼 -->
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚙️  API 키 설정"
+        android:textColor="#4a6a8a"
+        android:backgroundTint="#111720"/>
+
+</LinearLayout>
