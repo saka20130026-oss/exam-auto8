@@ -20,11 +20,14 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Install Gradle 7.5
+    - name: Download Gradle
       run: |
-        wget -q https://services.gradle.org/distributions/gradle-7.5-bin.zip -P /tmp
-        unzip -q /tmp/gradle-7.5-bin.zip -d /opt
-        sudo ln -sf /opt/gradle-7.5/bin/gradle /usr/local/bin/gradle
+        curl -L https://services.gradle.org/distributions/gradle-7.5-bin.zip -o /tmp/gradle.zip
+        unzip -q /tmp/gradle.zip -d /tmp/gradle-dist
+        echo "/tmp/gradle-dist/gradle-7.5/bin" >> $GITHUB_PATH
+
+    - name: Regenerate Wrapper JAR
+      run: |
         gradle wrapper --gradle-version=7.5 --distribution-type=bin
         chmod +x gradlew
 
