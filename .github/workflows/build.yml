@@ -10,17 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
+
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+
+    - name: Install Gradle 7.5
+      run: |
+        wget -q https://services.gradle.org/distributions/gradle-7.5-bin.zip -P /tmp
+        unzip -q /tmp/gradle-7.5-bin.zip -d /opt
+        sudo ln -sf /opt/gradle-7.5/bin/gradle /usr/local/bin/gradle
+        gradle wrapper --gradle-version=7.5 --distribution-type=bin
+        chmod +x gradlew
+
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace
+
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
